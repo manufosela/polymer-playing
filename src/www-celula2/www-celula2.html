@@ -7,7 +7,7 @@
 
     </style>
     <h2>www-celula2</h2>
-    <div>{{counter}}</div>
+    <div>Counter: {{counter}}</div>
   </template>
 
   <script>
@@ -18,7 +18,8 @@
     properties: {
       counter: {
         type: Number,
-        value: 0
+        value: 0,
+        notify: true
       }
     }
 

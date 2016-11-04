@@ -10,7 +10,7 @@
     </style>
     <h2>www Test APP</h2>
     <www-celula1 counter="{{x}}"></www-celula1>
-    <www-celula2 counter="{{x}}"></www-celula2>
+    <button on-click="createCelula2">Create Celula 2</button>
   </template>
 
   <script>
@@ -21,7 +21,23 @@
     properties: {
       x: {
         type: Number,
-        value: 0
+        value: 0,
+        observer: 'myObserver'
+      }
+    },
+    createCelula2: function() {
+      var self = this;
+      var el = this.$.el = document.createElement("www-celula2");
+      this.appendChild(el);
+      el.addEventListener('counter-changed', function(ev) {
+        self.x = this.counter;
+        console.log(self.x);
+      });
+    },
+
+    myObserver: function(nValue) {
+      if (this.$.el) {
+        this.$.el.counter = nValue;
       }
     }
 
