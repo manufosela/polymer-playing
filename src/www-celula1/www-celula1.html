@@ -1,0 +1,34 @@
+<dom-module id="www-celula1">
+  <template>
+    <style>
+     :host {
+      display: block;
+    }
+
+    </style>
+    <h2>www-celula1</h2>
+    <div>{{counter}}</div>
+    <button on-click='onClick'>CLICK ME</button>
+  </template>
+
+  <script>
+  Polymer({
+
+    is: 'www-celula1',
+
+    properties: {
+      counter: {
+        type: Number,
+        value: 0,
+        notify: true
+      }
+    },
+
+    onClick: function() {
+      this.counter++;
+    }
+
+  });
+
+  </script>
+</dom-module>

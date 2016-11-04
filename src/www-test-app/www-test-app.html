@@ -1,0 +1,31 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="www-test-app">
+  <template>
+    <style>
+     :host {
+      display: block;
+    }
+
+    </style>
+    <h2>www Test APP</h2>
+    <www-celula1 counter="{{x}}"></www-celula1>
+    <www-celula2 counter="{{x}}"></www-celula2>
+  </template>
+
+  <script>
+  Polymer({
+
+    is: 'www-test-app',
+
+    properties: {
+      x: {
+        type: Number,
+        value: 0
+      }
+    }
+
+  });
+
+  </script>
+</dom-module>
